@@ -6,8 +6,12 @@ export const Layout = ({ name }) => {
     const location = useLocation()
     const navigate = useNavigate()
 
-    const handleClick = () => {
+    const handleBack = () => {
         navigate(-1)
+    }
+
+    const handleAbout = () => {
+        navigate('about')
     }
 
     return (
@@ -15,7 +19,8 @@ export const Layout = ({ name }) => {
             <>
                 <h1>Welcome {name}</h1>
                 <Outlet />
-                <button onClick={handleClick}>Back</button>
+                <button onClick={handleBack}>Back</button>
+                <button onClick={handleAbout}>About</button>
             </>
             :
             <Navigate to='/login' />
